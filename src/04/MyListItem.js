@@ -1,5 +1,3 @@
-
-
 export default function MyListItem({title, imgUrl, content}) {
     let cnt = 0;
     const handleClick = () => {
