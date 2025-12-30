@@ -1,6 +1,6 @@
 
-export default function TailButton({caption, bcolor, handleClick}) {
-    const colors = {
+export default function TailButton({caption, buttonColor, handleClick}) {
+    const buttonColors = {
         blue: {
             base: 'bg-blue-600',
             hover: 'hover:bg-blue-800'
@@ -11,14 +11,19 @@ export default function TailButton({caption, bcolor, handleClick}) {
         }
     }
 
+    const baseClass = `inline-flex px-5 py-3 rounded-md mx-2
+        justify-center items-center
+        text-white font-bold`;
+
+    const buttonClass = `
+        ${baseClass}
+        ${buttonColors[buttonColor].base}
+        ${buttonColors[buttonColor].hover}
+    `;
+
     return (
-    <button className = {`inline-flex px-5 py-3 rounded-md mx-2
-                        justify-center items-center
-                        text-white font-bold
-                        ${colors[bcolor].base}
-                        ${colors[bcolor].hover}`}
-                        onClick={handleClick}>
-      {caption}
-    </button>
-  )
+        <button className={buttonClass} onClick={handleClick}>
+            {caption}
+        </button>
+    );
 }

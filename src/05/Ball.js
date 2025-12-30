@@ -43,8 +43,13 @@ export default function Ball( {ballnum} ) {
         text-white
     `;
 
-        return (
-        <div className={`${baseClass} ${ballColorClass}`}>
+    const ballClass = `
+        ${baseClass}
+        ${ballColorClass}
+    `;
+
+    return (
+        <div className={ballClass}>
             {ballnum}
         </div>
     );

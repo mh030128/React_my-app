@@ -70,9 +70,7 @@ export default function Lotto() {
         <div className="w-full flex flex-col justify-center items-center">
             <div className="m-10 flex items-center">
                 {/* balls */}
-                {nums.map((n) => (
-                    <Ball key={n} ballnum={n} />
-                ))}
+                {nums.map(n => <Ball key={n} ballnum={n} />)}
 
                 {bonusNum !== null && (
                     <>
@@ -82,7 +80,7 @@ export default function Lotto() {
                 )}
             </div>
             <div>
-                <TailButton caption='Lotto number 생성' bcolor = 'orange' handleClick={handleOK}/>
+                <TailButton caption='Lotto number 생성' buttonColor = 'orange' handleClick={handleOK}/>
             </div>
         </div>
     )
